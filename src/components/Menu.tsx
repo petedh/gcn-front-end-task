@@ -36,19 +36,23 @@ const socials: SocialProps = {
   socialProps: [
     {
       socialName: 'facebook',
-      url: 'https://facebook.com/globalcyclingnetwork'
+      url: 'https://facebook.com/globalcyclingnetwork',
+      id: 1
     },
     {
       socialName: 'twitter',
-      url: 'https://twitter.com/gcntweet'
+      url: 'https://twitter.com/gcntweet',
+      id: 2
     },
     {
       socialName: 'instagram',
-      url: 'https://instagram.com/globalcyclingnetwork/?hl=en'
+      url: 'https://instagram.com/globalcyclingnetwork/?hl=en',
+      id: 3
     },
     {
       socialName: 'google-plus',
-      url: 'https://plus.google.com/b/108391701717886882981/108391701717886882981/posts'
+      url: 'https://plus.google.com/b/108391701717886882981/108391701717886882981/posts',
+      id: 4
     }
   ]
 };

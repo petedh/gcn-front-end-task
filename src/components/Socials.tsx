@@ -28,8 +28,8 @@ const SocialHolder = styled.div`
 export const Socials = ({ socialProps }: SocialProps) => (
   <SocialHolder>
     <ul className="socials">
-      {socialProps.map(({ socialName, url }: SocialProp) => (
-        <li className="socials__list">
+      {socialProps.map(({ socialName, url, id }: SocialProp) => (
+        <li className="socials__list" key={id}>
           <a
             className={`socials__list__item ${socialName}`}
             target="_blank"
@@ -51,4 +51,5 @@ export type SocialProps = {
 export type SocialProp = {
   socialName: string;
   url: string;
+  id: number;
 };
