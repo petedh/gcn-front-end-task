@@ -71,4 +71,4 @@ I wanted to create a overflowing horizontal video carousel (similar to Instagram
 
 Other improvements could be some unit and snopshot testing, husky hooks to enfocre the esling and prettier rules as well as Github actions and sonarcloud to check code quality.
 
-Any questions [email me](mailto:peterdavidhenry@gmail.com) and I'll get back to you.
+Any questions [email me](mailto:peterdavidhenry@gmail.com) and I'll get back to you ASAP.
