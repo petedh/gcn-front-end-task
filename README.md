@@ -69,4 +69,6 @@ I created more sub menu items for a GCN area, this would require a page similar 
 
 I wanted to create a overflowing horizontal video carousel (similar to Instagram and FB) but ran out of time having spent a good couple of hours to get to this point I thought I'd show were I've gotten too. I would be keen on creating this carousel and probably will in my spare time.... :raised_eyebrow:
 
+Other improvements could be some unit and snopshot testing, husky hooks to enfocre the esling and prettier rules as well as Github actions and sonarcloud to check code quality.
+
 Any questions [email me](mailto:peterdavidhenry@gmail.com) and I'll get back to you.
