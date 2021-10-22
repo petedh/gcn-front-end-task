@@ -20,13 +20,13 @@ const MenuButtonStyle = styled(MenuButton)`
 export const Menu = () => {
   const [setActive, setActiveState] = useState(false);
 
-  const toggleAccordion = () => {
+  const toggleActive = () => {
     setActiveState(!setActive);
   };
 
   return (
     <MenuHolder className={`${setActive ? 'active' : ''}`}>
-      <MenuButtonStyle setActive={toggleAccordion} />
+      <MenuButtonStyle setActive={toggleActive} />
       <Socials {...socials} />
       <DropMenu {...dropMenuProps} />
     </MenuHolder>

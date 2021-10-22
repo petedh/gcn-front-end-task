@@ -3,6 +3,25 @@ import styled from 'styled-components';
 import 'font-awesome/css/font-awesome.min.css';
 import { SocialProp, SocialProps } from './types';
 
+export const Socials = ({ socialProps }: SocialProps) => (
+  <SocialHolder>
+    <ul className="socials">
+      {socialProps.map(({ socialName, url, id }: SocialProp) => (
+        <li className="socials__list" key={id}>
+          <a
+            className={`socials__list__item ${socialName}`}
+            target="_blank"
+            rel="noreferrer"
+            href={url}
+          >
+            <i className={`fa fa-${socialName}`}></i>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </SocialHolder>
+);
+
 const SocialHolder = styled.div`
   .socials {
     margin: 0 8px 0 0;
@@ -25,22 +44,3 @@ const SocialHolder = styled.div`
     }
   }
 `;
-
-export const Socials = ({ socialProps }: SocialProps) => (
-  <SocialHolder>
-    <ul className="socials">
-      {socialProps.map(({ socialName, url, id }: SocialProp) => (
-        <li className="socials__list" key={id}>
-          <a
-            className={`socials__list__item ${socialName}`}
-            target="_blank"
-            rel="noreferrer"
-            href={url}
-          >
-            <i className={`fa fa-${socialName}`}></i>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </SocialHolder>
-);

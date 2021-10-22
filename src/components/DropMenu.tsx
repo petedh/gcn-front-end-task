@@ -2,6 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 import { DropMenuItems, DropMenuItem } from './types';
 
+const GetListItems = ({ text, url, items }: DropMenuItem) => (
+  <li className={`dropdown__list ${url === '/' ? 'dropdown__list--home' : ''}`} role="menuitem">
+    <a className="dropdown__list__item" href={url}>
+      {text || (url === '/' && <i className="fa fa-home"></i>)}
+    </a>
+    {items.length > 0 && (
+      <ul>
+        {items.length > 0 &&
+          items.map((item: any) => <GetListItems key={'item-' + item.id} {...item} />)}
+      </ul>
+    )}
+  </li>
+);
+
+export const DropMenu = (props: DropMenuItems) => {
+  return (
+    <DropMenuHolder>
+      <ul className="dropdown menu" data-dropdown-menu="dropdown-menu" role="menubar">
+        {props.items.map((item: any) => (
+          <GetListItems key={'item-' + item.id} {...item} />
+        ))}
+      </ul>
+    </DropMenuHolder>
+  );
+};
+
 const DropMenuHolder = styled.menu`
   max-height: 0;
   width: 100%;
@@ -57,29 +83,3 @@ const DropMenuHolder = styled.menu`
     display: block;
   }
 `;
-
-const GetListItems = ({ text, url, items }: DropMenuItem) => (
-  <li className={`dropdown__list ${url === '/' ? 'dropdown__list--home' : ''}`} role="menuitem">
-    <a className="dropdown__list__item" href={url}>
-      {text || (url === '/' && <i className="fa fa-home"></i>)}
-    </a>
-    {items.length > 0 && (
-      <ul>
-        {items.length > 0 &&
-          items.map((item: any) => <GetListItems key={'item-' + item.id} {...item} />)}
-      </ul>
-    )}
-  </li>
-);
-
-export const DropMenu = (props: DropMenuItems) => {
-  return (
-    <DropMenuHolder>
-      <ul className="dropdown menu" data-dropdown-menu="dropdown-menu" role="menubar">
-        {props.items.map((item: any) => (
-          <GetListItems key={'item-' + item.id} {...item} />
-        ))}
-      </ul>
-    </DropMenuHolder>
-  );
-};

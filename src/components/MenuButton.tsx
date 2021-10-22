@@ -2,6 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import { SetActive } from './types';
 
+export const MenuButton = ({ setActive }: SetActive) => {
+  const updateActive = () => {
+    setActive();
+  };
+
+  return (
+    <MenuButtonStyle
+      className="menu-icon"
+      type="button"
+      data-toggle="gcn-menu"
+      onClick={() => {
+        updateActive();
+      }}
+    >
+      Menu
+    </MenuButtonStyle>
+  );
+};
+
 const MenuButtonStyle = styled.button`
   top: 20px;
   left: 12px;
@@ -64,22 +83,3 @@ const MenuButtonStyle = styled.button`
     }
   }
 `;
-
-export const MenuButton = ({ setActive }: SetActive) => {
-  const updateActive = () => {
-    setActive();
-  };
-
-  return (
-    <MenuButtonStyle
-      className="menu-icon"
-      type="button"
-      data-toggle="gcn-menu"
-      onClick={() => {
-        updateActive();
-      }}
-    >
-      Menu
-    </MenuButtonStyle>
-  );
-};
