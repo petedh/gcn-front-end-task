@@ -46,13 +46,13 @@ const DropMenuHolder = styled.menu`
 
   .dropdown__list--home {
     float: right;
-    width: 50px;
+    width: 60px;
     font-size: 30px;
     margin-top: -10px;
   }
 
   .dropdown__list__item {
-    padding: 15px 10px;
+    padding: 15px;
     display: block;
   }
 `;
@@ -62,8 +62,12 @@ const GetListItems = ({ text, url, items }: any) => (
     <a className="dropdown__list__item" href={url}>
       {text || (url === '/' && <i className="fa fa-home"></i>)}
     </a>
-    {items.length > 0 &&
-      items.map((item: any) => <GetListItems key={'item-' + item.id} {...item} />)}
+    {items.length > 0 && (
+      <ul>
+        {items.length > 0 &&
+          items.map((item: any) => <GetListItems key={'item-' + item.id} {...item} />)}
+      </ul>
+    )}
   </li>
 );
 
