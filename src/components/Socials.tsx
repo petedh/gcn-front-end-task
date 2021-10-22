@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'font-awesome/css/font-awesome.min.css';
+import { SocialProp, SocialProps } from './types';
 
 const SocialHolder = styled.div`
   .socials {
@@ -43,13 +44,3 @@ export const Socials = ({ socialProps }: SocialProps) => (
     </ul>
   </SocialHolder>
 );
-
-export type SocialProps = {
-  socialProps: SocialProp[];
-};
-
-export type SocialProp = {
-  socialName: string;
-  url: string;
-  id: number;
-};

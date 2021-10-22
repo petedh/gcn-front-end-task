@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SetActive } from './types';
 
 const MenuButtonStyle = styled.button`
   top: 20px;
@@ -64,7 +65,7 @@ const MenuButtonStyle = styled.button`
   }
 `;
 
-export const MenuButton = ({ setActive }: MenuButtonProps) => {
+export const MenuButton = ({ setActive }: SetActive) => {
   const updateActive = () => {
     setActive();
   };
@@ -81,8 +82,4 @@ export const MenuButton = ({ setActive }: MenuButtonProps) => {
       Menu
     </MenuButtonStyle>
   );
-};
-
-type MenuButtonProps = {
-  setActive: () => void;
 };

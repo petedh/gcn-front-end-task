@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { DropMenuItems, DropMenuItem } from './types';
 
 const DropMenuHolder = styled.menu`
   max-height: 0;
@@ -57,7 +58,7 @@ const DropMenuHolder = styled.menu`
   }
 `;
 
-const GetListItems = ({ text, url, items }: any) => (
+const GetListItems = ({ text, url, items }: DropMenuItem) => (
   <li className={`dropdown__list ${url === '/' ? 'dropdown__list--home' : ''}`} role="menuitem">
     <a className="dropdown__list__item" href={url}>
       {text || (url === '/' && <i className="fa fa-home"></i>)}
@@ -81,15 +82,4 @@ export const DropMenu = (props: DropMenuItems) => {
       </ul>
     </DropMenuHolder>
   );
-};
-
-export type DropMenuItems = {
-  items: DropMenuItem[];
-};
-
-type DropMenuItem = {
-  text: string;
-  url: string;
-  id: number;
-  items: DropMenuItem[];
 };
