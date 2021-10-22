@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { SetActive } from './types';
 
-export const MenuButton = ({ setActive }: SetActive) => {
+export const MenuButton = ({ toggleActive }: SetActive) => {
   const updateActive = () => {
-    setActive();
+    toggleActive();
   };
 
   return (

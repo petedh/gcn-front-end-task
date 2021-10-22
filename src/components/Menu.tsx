@@ -1,10 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import styled from 'styled-components';
 import { DropMenu } from './DropMenu';
 import { MenuButton } from './MenuButton';
 import { Socials } from './Socials';
-import { socials, dropMenuProps } from './types';
+import { socials, dropMenuProps, MenuProps } from './types';
 
 const MenuHolder = styled.menu`
   background: #000;
@@ -17,16 +16,10 @@ const MenuButtonStyle = styled(MenuButton)`
   float: left;
 `;
 
-export const Menu = () => {
-  const [setActive, setActiveState] = useState(false);
-
-  const toggleActive = () => {
-    setActiveState(!setActive);
-  };
-
+export const Menu = ({ active, toggleActive }: MenuProps) => {
   return (
-    <MenuHolder className={`${setActive ? 'active' : ''}`}>
-      <MenuButtonStyle setActive={toggleActive} />
+    <MenuHolder className={`${active ? 'active' : ''}`}>
+      <MenuButtonStyle toggleActive={toggleActive} />
       <Socials {...socials} />
       <DropMenu {...dropMenuProps} />
     </MenuHolder>

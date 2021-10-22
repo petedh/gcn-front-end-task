@@ -1,5 +1,10 @@
 export type SetActive = {
-  setActive: () => void;
+  toggleActive: () => void;
+};
+
+export type MenuProps = {
+  active: boolean;
+  toggleActive: () => void;
 };
 
 export type DropMenuItems = {
