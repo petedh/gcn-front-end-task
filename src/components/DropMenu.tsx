@@ -57,113 +57,37 @@ const DropMenuHolder = styled.menu`
   }
 `;
 
-export const DropMenu = () => (
-  <DropMenuHolder>
-    <ul className="dropdown menu" data-dropdown-menu="hw5fi8-dropdown-menu" role="menubar">
-      <li className="dropdown__list dropdown__list--home" role="menuitem">
-        <a className="dropdown__list__item" href="/">
-          <i className="fa fa-home"></i>
-        </a>
-      </li>
-      <li className="dropdown__list" role="menuitem">
-        <a className="dropdown__list__item" href="/category/how-to">
-          How To
-        </a>
-      </li>
-      <li className="dropdown__list" role="menuitem">
-        <a className="dropdown__list__item" href="/category/maintenance-mondays">
-          Maintenance
-        </a>
-      </li>
-      <li className="dropdown__list" role="menuitem">
-        <a className="dropdown__list__item" href="/category/gcn">
-          GCN
-        </a>
-        <ul>
-          <li className="dropdown__list" role="menuitem">
-            <a className="dropdown__list__item" href="/category/gcn-show">
-              GCN Show
+export const DropMenu = (props: any) => {
+  debugger;
+  return (
+    <DropMenuHolder>
+      <ul className="dropdown menu" data-dropdown-menu="hw5fi8-dropdown-menu" role="menubar">
+        {props.items.map(({ text, url, sub }: any) => (
+          <li
+            className={`dropdown__list ${url === '/' ? 'dropdown__list--home' : ''}`}
+            role="menuitem"
+          >
+            <a className="dropdown__list__item" href={url}>
+              {text}
+              {url === '/' && <i className="fa fa-home"></i>}
             </a>
+            {sub.length > 0 &&
+              sub.map(({ text, url }: any) => (
+                <li className="dropdown__list" role="menuitem">
+                  <a className="dropdown__list__item" href={url}>
+                    {text}
+                  </a>
+                </li>
+              ))}
           </li>
-          <li className="dropdown__list" role="menuitem">
-            <a className="dropdown__list__item" href="/category/ask-gcn">
-              Ask GCN
-            </a>
-          </li>
-          <li className="dropdown__list" role="menuitem">
-            <a className="dropdown__list__item" href="/category/gcn-racing">
-              GCN Racing
-            </a>
-          </li>
-          <li className="dropdown__list" role="menuitem">
-            <a className="dropdown__list__item" href="/category/gcn-tech">
-              GCN Tech
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li className="dropdown__list" role="menuitem">
-        <a className="dropdown__list__item" href="/category/train-with-gcn">
-          Training
-        </a>
-      </li>
-      <li className="dropdown__list" role="menuitem">
-        <a className="dropdown__list__item" href="/category/features">
-          Features
-        </a>
-      </li>
-      <li className="dropdown__list" role="menuitem">
-        <a className="dropdown__list__item" href="/category/top-10s">
-          Top 10s
-        </a>
-      </li>
-      <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-        <a className="dropdown__list__item" href="/presenters">
-          Presenters
-        </a>
-        <ul>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/conor-dunne">
-              Conor Dunne
-            </a>
-          </li>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/daniel-lloyd">
-              Daniel Lloyd
-            </a>
-          </li>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/james-lw">
-              James Lowsley-Williams
-            </a>
-          </li>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/jon-cannings">
-              Jon Cannings
-            </a>
-          </li>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/manon-lloyd">
-              Manon Lloyd
-            </a>
-          </li>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/oliver-bridgewood">
-              Oliver Bridgewood
-            </a>
-          </li>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/simon-richardson">
-              Simon Richardson
-            </a>
-          </li>
-          <li className="dropdown__list dropdown__list--mobile" role="menuitem">
-            <a className="dropdown__list__item" href="/presenters/tom-last">
-              Tom Last
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </DropMenuHolder>
-);
+        ))}
+      </ul>
+    </DropMenuHolder>
+  );
+};
+
+export type DropMenuProp = {
+  text: string;
+  url: string;
+  sub: DropMenuProp[];
+};
