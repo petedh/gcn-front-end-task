@@ -62,7 +62,8 @@ const GetListItems = ({ text, url, items }: any) => (
     <a className="dropdown__list__item" href={url}>
       {text || (url === '/' && <i className="fa fa-home"></i>)}
     </a>
-    {items.length > 0 && items.map((item: any) => <GetListItems key={'item-' + item} {...item} />)}
+    {items.length > 0 &&
+      items.map((item: any) => <GetListItems key={'item-' + item.id} {...item} />)}
   </li>
 );
 
@@ -71,7 +72,7 @@ export const DropMenu = (props: any) => {
     <DropMenuHolder>
       <ul className="dropdown menu" data-dropdown-menu="dropdown-menu" role="menubar">
         {props.items.map((item: any) => (
-          <GetListItems key={'item-' + item} {...item} />
+          <GetListItems key={'item-' + item.id} {...item} />
         ))}
       </ul>
     </DropMenuHolder>
