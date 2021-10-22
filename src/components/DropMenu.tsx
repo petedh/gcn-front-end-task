@@ -71,7 +71,7 @@ const GetListItems = ({ text, url, items }: any) => (
   </li>
 );
 
-export const DropMenu = (props: any) => {
+export const DropMenu = (props: DropMenuItems) => {
   return (
     <DropMenuHolder>
       <ul className="dropdown menu" data-dropdown-menu="dropdown-menu" role="menubar">
@@ -83,8 +83,13 @@ export const DropMenu = (props: any) => {
   );
 };
 
-export type DropMenuProp = {
+export type DropMenuItems = {
+  items: DropMenuItem[];
+};
+
+type DropMenuItem = {
   text: string;
   url: string;
-  items: DropMenuProp[];
+  id: number;
+  items: DropMenuItem[];
 };

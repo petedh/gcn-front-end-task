@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
-import { DropMenu } from './DropMenu';
+import { DropMenu, DropMenuItems } from './DropMenu';
 import { MenuButton } from './MenuButton';
 import { Socials, SocialProps } from './Socials';
 
@@ -57,7 +57,7 @@ const socials: SocialProps = {
   ]
 };
 
-const dropMenuProps = {
+const dropMenuProps: DropMenuItems = {
   items: [
     {
       text: '',
