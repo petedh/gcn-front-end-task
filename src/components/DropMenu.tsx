@@ -57,30 +57,21 @@ const DropMenuHolder = styled.menu`
   }
 `;
 
+const GetListItems = ({ text, url, items }: any) => (
+  <li className={`dropdown__list ${url === '/' ? 'dropdown__list--home' : ''}`} role="menuitem">
+    <a className="dropdown__list__item" href={url}>
+      {text || (url === '/' && <i className="fa fa-home"></i>)}
+    </a>
+    {items.length > 0 && items.map((item: any) => <GetListItems key={'item-' + item} {...item} />)}
+  </li>
+);
+
 export const DropMenu = (props: any) => {
-  debugger;
   return (
     <DropMenuHolder>
-      <ul className="dropdown menu" data-dropdown-menu="hw5fi8-dropdown-menu" role="menubar">
-        {props.items.map(({ text, url, id, sub }: any) => (
-          <li
-            className={`dropdown__list ${url === '/' ? 'dropdown__list--home' : ''}`}
-            key={id}
-            role="menuitem"
-          >
-            <a className="dropdown__list__item" href={url}>
-              {text}
-              {url === '/' && <i className="fa fa-home"></i>}
-            </a>
-            {sub.length > 0 &&
-              sub.map(({ text, url, id }: any) => (
-                <li className="dropdown__list" role="menuitem" key={id}>
-                  <a className="dropdown__list__item" href={url}>
-                    {text}
-                  </a>
-                </li>
-              ))}
-          </li>
+      <ul className="dropdown menu" data-dropdown-menu="dropdown-menu" role="menubar">
+        {props.items.map((item: any) => (
+          <GetListItems key={'item-' + item} {...item} />
         ))}
       </ul>
     </DropMenuHolder>
@@ -90,5 +81,5 @@ export const DropMenu = (props: any) => {
 export type DropMenuProp = {
   text: string;
   url: string;
-  sub: DropMenuProp[];
+  items: DropMenuProp[];
 };

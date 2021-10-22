@@ -11,9 +11,9 @@ export function App() {
         <img src={Header} className="header" alt="header" />
       </header>
       <Menu />
-      <body className="App-header">
+      <main className="App-header">
         <img src={Body} className="body" alt="body" />
-      </body>
+      </main>
     </div>
   );
 }

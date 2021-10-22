@@ -63,44 +63,48 @@ const dropMenuProps = {
       text: '',
       url: '/',
       id: 1,
-      sub: []
+      items: []
     },
     {
       text: 'How To',
       url: '/category/how-to',
       id: 2,
-      sub: []
+      items: []
     },
     {
       text: 'Maintenance',
       url: '/category/maintenance-mondays',
       id: 3,
-      sub: []
+      items: []
     },
     {
       text: 'GCN',
       url: '/category/gcn',
       id: 4,
-      sub: [
+      items: [
         {
           text: 'GCN Show',
           url: '/category/gcn-show',
-          id: 5
+          id: 5,
+          items: []
         },
         {
           text: 'Ask GCN',
           url: '/category/ask-gcn',
-          id: 6
+          id: 6,
+          items: []
         },
         {
           text: 'GCN Racing',
           url: '/category/gcn-racing',
-          id: 7
+          id: 7,
+          items: []
         },
         {
           text: 'GCN Tech',
           url: '/category/gcn-tech',
-          id: 8
+          id: 8,
+          items: []
         }
       ]
     },
@@ -108,64 +112,72 @@ const dropMenuProps = {
       text: 'Training',
       url: '/category/train-with-gcn',
       id: 9,
-      sub: []
+      items: []
     },
     {
       text: 'Features',
       url: '/category/features',
       id: 10,
-      sub: []
+      items: []
     },
     {
       text: 'Top 10s',
       url: '/category/top-10s',
       id: 11,
-      sub: []
+      items: []
     },
     {
       text: 'Presenters',
       url: '/category/presenters',
       id: 12,
-      sub: [
+      items: [
         {
           text: 'Conor Dunne',
           url: '/presenters/conor-dunne',
-          id: 13
+          id: 13,
+          items: []
         },
         {
           text: 'Daniel Lloyd',
           url: '/presenters/daniel-lloyd',
-          id: 14
+          id: 14,
+          items: []
         },
         {
           text: 'James Lowsley-Williams',
           url: '/presenters/james-lw',
-          id: 15
+          id: 15,
+          items: []
         },
         {
           text: 'Jon Cannings',
           url: '/presenters/jon-cannings',
-          id: 16
+          id: 16,
+          items: []
         },
         {
           text: 'Manon Lloyd',
           url: '/presenters/manon-lloyd',
-          id: 17
+          id: 17,
+          items: []
         },
         {
           text: 'Oliver Bridgewood',
           url: '/presenters/oliver-bridgewood',
-          id: 18
+          id: 18,
+          items: []
         },
         {
           text: 'Simon Richardson',
           url: '/presenters/simon-richardson',
-          id: 19
+          id: 19,
+          items: []
         },
         {
           text: 'Tom Last',
           url: '/presenters/tom-last',
-          id: 19
+          id: 20,
+          items: []
         }
       ]
     }
