@@ -62,9 +62,10 @@ export const DropMenu = (props: any) => {
   return (
     <DropMenuHolder>
       <ul className="dropdown menu" data-dropdown-menu="hw5fi8-dropdown-menu" role="menubar">
-        {props.items.map(({ text, url, sub }: any) => (
+        {props.items.map(({ text, url, id, sub }: any) => (
           <li
             className={`dropdown__list ${url === '/' ? 'dropdown__list--home' : ''}`}
+            key={id}
             role="menuitem"
           >
             <a className="dropdown__list__item" href={url}>
@@ -72,8 +73,8 @@ export const DropMenu = (props: any) => {
               {url === '/' && <i className="fa fa-home"></i>}
             </a>
             {sub.length > 0 &&
-              sub.map(({ text, url }: any) => (
-                <li className="dropdown__list" role="menuitem">
+              sub.map(({ text, url, id }: any) => (
+                <li className="dropdown__list" role="menuitem" key={id}>
                   <a className="dropdown__list__item" href={url}>
                     {text}
                   </a>
